@@ -1,0 +1,23 @@
+{
+  "name": "yunustuzun.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "blog/index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "mkdocs build --clean",
+    "build": "mkdocs build -d mydocs --clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yunustuzun/yunustuzun.github.io.git"
+  },
+  "author": "Yunus Tüzün",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yunustuzun/yunustuzun.github.io/issues"
+  },
+  "homepage": "https://github.com/Yunustuzun/yunustuzun.github.io#readme"
+}

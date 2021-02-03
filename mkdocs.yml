@@ -1,3 +1,9 @@
-site_name: My Docs
+site_name: Yunus Tüzün - Computer Engineer
 theme:
   name: material
+  palette:
+    primary: teal
+    accent: blue
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
