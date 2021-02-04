@@ -8,7 +8,9 @@
   },
   "scripts": {
     "test": "mkdocs serve",
-    "build": "mkdocs build -d mydocs --clean"
+    "build": "mkdocs build -d mydocs --clean",
+    "deploy": "git push --all",
+    "git": "git add . && git commit -m"
   },
   "repository": {
     "type": "git",

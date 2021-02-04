@@ -2,8 +2,37 @@ site_name: Yunus Tüzün Notes
 theme:
   name: material
   font:
-    text: Poppins
+    text: Source Sans Pro
+  highlightjs: true
+  hljs_languages:
+    - xml
+    - yaml
+    - rust    
+    - javascript    
   features:
     - navigation.sections
+
 extra_css:
   - stylesheets/extra.css
+markdown_extensions:
+  - admonition
+  - attr_list
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  # PyMdown Extensions Documentation: https://facelessuser.github.io/pymdown-extensions/extensions/betterem/
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.tabbed
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.caret

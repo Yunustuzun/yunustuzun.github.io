@@ -14,7 +14,7 @@
     
     
       
-        <title>Custom Paginator for Grid Table - Yunus Tüzün Notes</title>
+        <title>My Favorite Tools - Yunus Tüzün Notes</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custom-paginator-for-grid-table" class="md-skip">
+        <a href="#my-favorite-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Custom Paginator for Grid Table
+              My Favorite Tools
             
           </span>
         </div>
@@ -185,16 +185,14 @@
 
   
   
-    
-  
   
     
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
       
       <label class="md-nav__link" for="nav-2">
         Fiori
@@ -211,20 +209,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../fiori/custom-paginator/" class="md-nav__link">
         Custom Paginator for Grid Table
       </a>
-      
     </li>
   
 
@@ -234,7 +223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fundamentals-sap-fiori/" class="md-nav__link">
+      <a href="../../fiori/fundamentals-sap-fiori/" class="md-nav__link">
         Fundamentals for SAP Fiori Applications Intro
       </a>
     </li>
@@ -253,14 +242,16 @@
 
   
   
+    
+  
   
     
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
       
       <label class="md-nav__link" for="nav-3">
         Personel
@@ -277,11 +268,56 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../personel/my-favorite-tool/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          My Favorite Tools
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         My Favorite Tools
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daily" class="md-nav__link">
+    Daily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-development" class="md-nav__link">
+    Software Development
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -291,7 +327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../personel/my-favorite-websites/" class="md-nav__link">
+      <a href="../my-favorite-websites/" class="md-nav__link">
         My Favorite Websites
       </a>
     </li>
@@ -322,6 +358,28 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#daily" class="md-nav__link">
+    Daily
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#software-development" class="md-nav__link">
+    Software Development
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -333,17 +391,36 @@
               
                 
                 
-                <h1 id="custom-paginator-for-grid-table">Custom Paginator for Grid Table<a class="headerlink" href="#custom-paginator-for-grid-table" title="Permanent link">&para;</a></h1>
-<p>In this blog post, I will mention how we add paginator to grid tables. Firstly, the paginator control was in older versions. After 1.38 version of UI5, we couldn’t add paginator in grid tables.</p>
-<p>When I started coding the pagination structure, It seems very easy. But after some parts of filtering, sorting, changing page count functionality, it became more and more complex. For Example; if you will use filtering you should regenerate paginator vs.</p>
-<p>After this workings, I plan to create a new custom control and use it in view in an easy way.</p>
-<p>You can view it in <a href="http://embed.plnkr.co/9Jlh6N/">Plunker</a>.
-<img alt="Custom Paginator" src="../../images/custom-paginator-1.png" />
-<img alt="Custom Paginator" src="../../images/custom-paginator-2.png" /></p>
-<p>First of all, I perform the rendering of the Paginator after each reporting process is finished. The point to be careful here is that we need to do the paginator again in all sorting and filtering operations.</p>
-<p>I created the template for adding the paginator structure with the below code block. I am creating a separate template for Mobile.</p>
-<p>Depending on the page count and item count, I fill the properties of my paginator object and init it. For mobile, I prefer to select control. If you want to examine the full code structure, you can access it from the <a href="https://github.com/Yunustuzun/Paginator-in-Table-UI5">link</a>.</p>
-<p>I didn’t do anything on the View layer to create the Paginator function. In the next blog post, I aim to explain how we can activate it with a simple parameter on the View layer of the application, not writing any code on the controller side via custom controls.</p>
+                <h1 id="my-favorite-tools">My Favorite Tools<a class="headerlink" href="#my-favorite-tools" title="Permanent link">&para;</a></h1>
+<p>It is my toolsets for Windows and IOS, Android Platforms. Some of them for development stuff, some others for daily usage.</p>
+<h2 id="daily">Daily<a class="headerlink" href="#daily" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://rammichael.com/">7+ Taskbar Tweaker</a> Allows you to configure various aspects of the Windows taskbar.</li>
+<li><a href="https://ditto-cp.sourceforge.io/">Ditto</a> is an extension to the standard windows clipboard. It saves each item placed on the clipboard allowing you access to any of those items at a later time. </li>
+<li><a href="https://app.prntscr.com/en/index.html">Lightshot</a> is the fastest way to take a customizable screenshot</li>
+<li><a href="https://www.google.com/intl/tr_ALL/drive/download/backup-and-sync/">Google Drive Backup and Sync</a> is sync utility for files stored in folders on your computer to the cloud and stores them there.</li>
+<li><a href="https://quest-app.appspot.com/">Qtranslate</a> is a free translator for Windows</li>
+<li><a href="https://www.foxitsoftware.com/pdf-reader/">Foxit Reader</a> is small, fast, and feature-rich PDF reader</li>
+<li><a href="https://windirstat.net/">WinDirStat</a> is a disk usage statistics viewer and cleanup tool for various versions of Microsoft Windows.</li>
+<li><a href="https://app.grammarly.com/">Grammarly</a>  is clear, mistake-free writing with Grammarly’s AI-powered writing assistant.</li>
+<li><a href="https://adblockplus.org/">Adblock Plus</a> for surf the web with no annoying ads</li>
+<li><a href="https://synthesiagame.com/">Synthesia</a> A fun way to learn how to play the piano.</li>
+<li><a href="https://yousician.com/">Yousician</a> he simple, fun, and affordable way to learn an instrument</li>
+</ul>
+<h2 id="software-development">Software Development<a class="headerlink" href="#software-development" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/SAP_Graphical_User_Interface"> Sap Gui</a> is the graphical user interface client in SAP ERP’s 3-tier architecture of database, application server, and client.</li>
+<li><a href="https://code.visualstudio.com/"> Visual Studio Code</a> is a code editing tool. Free. Built on open source. Runs everywhere.</li>
+<li><a href="https://www.mysql.com/products/workbench/"> MySQL Workbench</a> is a unified visual tool for database architects, developers, and DBAs. </li>
+<li><a href="https://www.eclipse.org/"> Eclipse IDE</a> is famous for our Java Integrated Development Environment (IDE). I am using it for SAP developments.</li>
+<li><a href="https://robomongo.org/"> Robo3T</a> brings you support for MongoDB 4.0 and SCRAM-SHA-256, an upgraded mongo shell, support for importing from MongoDB SRV connection strings, among many other fixes and improvements.</li>
+<li><a href="https://www.adobe.com/tr/products/photoshop.html"> Photoshop</a> is imaging and graphic design software is at the core of just about every creative project, from photo editing and compositing to digital painting, animation, and graphic design</li>
+<li><a href="https://filezilla-project.org/"> Filezilla</a> is the free FTP solution.</li>
+<li><a href="https://www.httpwatch.com/"> HTTPWatch</a> is integrated with Chrome, Edge, and Internet Explorer browsers to show you the HTTP and HTTPS traffic that is generated when you access a web page.</li>
+<li><a href="http://instant-eyedropper.com/"> Instant Eyedropper</a> is a free color detection tool for webmasters that will identify and automatically paste to the clipboard the HTML color code of any pixel on the screen with just a single mouse click.</li>
+<li><a href="https://www.postman.com/"> Postman</a> is a collaboration platform for API development. Postman’s features simplify each step of building an API and streamline collaboration so you can create better APIs—faster.</li>
+<li><a href="https://www.autohotkey.com/">AutoHotkey</a> is a free, open-source scripting language for Windows that allows users to easily create small to complex scripts for all kinds of tasks such as form fillers, auto-clicking, macros, etc.</li>
+</ul>
                 
               
               
@@ -362,7 +439,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../fiori/fundamentals-sap-fiori/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -371,19 +448,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Fundamentals for SAP Fiori Applications Intro
               </div>
             </div>
           </a>
         
         
-          <a href="../fundamentals-sap-fiori/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../my-favorite-websites/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Fundamentals for SAP Fiori Applications Intro
+                My Favorite Websites
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">

@@ -1,0 +1,14 @@
+:root {
+  /* Primary color shades */
+  --md-primary-fg-color: #01579B;
+  --md-primary-fg-color--light: #039BE5;
+  --md-primary-fg-color--dark: #01579B;
+  /* --md-primary-bg-color: hsla(0, 0%, 100%, 1); */
+  /* --md-primary-bg-color--light: hsla(0, 0%, 100%, 0.7); */
+  --md-text-link-color: #039BE5;
+  /* Accent color shades */
+  --md-accent-fg-color: #039BE5;
+  --md-accent-fg-color--transparent:#039BE5;
+  /* --md-accent-bg-color: hsla(0, 0%, 100%, 1); */
+  /* --md-accent-bg-color--light: hsla(0, 0%, 100%, 0.7); */
+}

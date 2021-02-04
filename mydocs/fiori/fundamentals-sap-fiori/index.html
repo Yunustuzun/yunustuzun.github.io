@@ -14,7 +14,7 @@
     
     
       
-        <title>Custom Paginator for Grid Table - Yunus Tüzün Notes</title>
+        <title>Fundamentals for SAP Fiori Applications Intro - Yunus Tüzün Notes</title>
       
     
     
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#custom-paginator-for-grid-table" class="md-skip">
+        <a href="#fundamentals-for-sap-fiori-applications-intro" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Custom Paginator for Grid Table
+              Fundamentals for SAP Fiori Applications Intro
             
           </span>
         </div>
@@ -211,6 +211,18 @@
             
   
   
+  
+    <li class="md-nav__item">
+      <a href="../custom-paginator/" class="md-nav__link">
+        Custom Paginator for Grid Table
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
     
   
   
@@ -222,21 +234,9 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Custom Paginator for Grid Table
-      </a>
-      
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fundamentals-sap-fiori/" class="md-nav__link">
         Fundamentals for SAP Fiori Applications Intro
       </a>
+      
     </li>
   
 
@@ -333,17 +333,59 @@
               
                 
                 
-                <h1 id="custom-paginator-for-grid-table">Custom Paginator for Grid Table<a class="headerlink" href="#custom-paginator-for-grid-table" title="Permanent link">&para;</a></h1>
-<p>In this blog post, I will mention how we add paginator to grid tables. Firstly, the paginator control was in older versions. After 1.38 version of UI5, we couldn’t add paginator in grid tables.</p>
-<p>When I started coding the pagination structure, It seems very easy. But after some parts of filtering, sorting, changing page count functionality, it became more and more complex. For Example; if you will use filtering you should regenerate paginator vs.</p>
-<p>After this workings, I plan to create a new custom control and use it in view in an easy way.</p>
-<p>You can view it in <a href="http://embed.plnkr.co/9Jlh6N/">Plunker</a>.
-<img alt="Custom Paginator" src="../../images/custom-paginator-1.png" />
-<img alt="Custom Paginator" src="../../images/custom-paginator-2.png" /></p>
-<p>First of all, I perform the rendering of the Paginator after each reporting process is finished. The point to be careful here is that we need to do the paginator again in all sorting and filtering operations.</p>
-<p>I created the template for adding the paginator structure with the below code block. I am creating a separate template for Mobile.</p>
-<p>Depending on the page count and item count, I fill the properties of my paginator object and init it. For mobile, I prefer to select control. If you want to examine the full code structure, you can access it from the <a href="https://github.com/Yunustuzun/Paginator-in-Table-UI5">link</a>.</p>
-<p>I didn’t do anything on the View layer to create the Paginator function. In the next blog post, I aim to explain how we can activate it with a simple parameter on the View layer of the application, not writing any code on the controller side via custom controls.</p>
+                <h1 id="fundamentals-for-sap-fiori-applications-intro">Fundamentals for SAP Fiori Applications Intro<a class="headerlink" href="#fundamentals-for-sap-fiori-applications-intro" title="Permanent link">&para;</a></h1>
+<p>SAP Fundamentals allows you to make Fiori applications using the desired UI framework (React, Vue, Angular) technology.</p>
+<p>With this solution SAP provide developers to build Fiori applications using the web-based technology with using open source NPM libraries. This allows developers to have more flexible structure and get benefits of various libraries.</p>
+<p>Fundamentals will not replace instead of UI5 ​​framework technology.So the improvements in UI5 will not slow down or become outmoded. So Fiori Developers will not be dependent on a single technology and will have chance to choose their technology freely.</p>
+<p><img alt="alt" src="../../images/fundamental-sap-fiori.png" /></p>
+<p>You can follow the latest news from the <a href="https://sap.github.io/fundamental/index.html">Fundamental Github page</a></p>
+<p>You can see tecnical details , components below links for each technology.</p>
+<p><a href="https://sap.github.io/fundamental-react">React</a></p>
+<p><a href="https://sap.github.io/fundamental-ngx">Angular JS</a></p>
+<p><a href="https://sap.github.io/fundamental-vue">Vue</a></p>
+<p>Let’s develop a simple application with React.JS Framework.</p>
+<p>To be able to develop a React.JS project, we need to have a package manager program on our computer. Among them the most popular is the NPM. You can also use YARN package manager if you want.</p>
+<p>We need to install <a href="https://nodejs.org/en/">Node.js</a> from the link. Node.JS is the runtime environment for run javascript files in our PC. NPM will be installed defaultly if you finish the installation steps.</p>
+<p>After the installation, You can open the Visual Studio Code , type the following code on terminal screen for creating the React application.</p>
+<p><code>npx create-react-app &lt;project name&gt;</code></p>
+<p>We should type <code>cd &lt;project name&gt;</code> for being in project folder.</p>
+<p>Then we are installing react fundamental components with following command.</p>
+<p><code>npm install fundamental-styles fundamental-react</code> </p>
+<p>When the installation process is finished, project folder will include three folder .</p>
+<p>node_modules folder, containing the library files</p>
+<p>public folder, that is open to external access,</p>
+<p>src folder, containing the source files</p>
+<p>No more , So we can use React’s Fundamental components.We will create a simply web page with the Title, Text and Buttons in the Panel.</p>
+<p>Let’s go to the App.js file. We need to import components before using them. Lets add the following code snippets to the top of the file.</p>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="p">{</span><span class="nx">Panel</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fundamental-react/Panel&#39;</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span><span class="nx">Button</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;fundamental-react/Button&#39;</span><span class="p">;</span>
+</code></pre></div>
+<p>Let’s delete all code div elements except of  “App” class div . And add the following snippets.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Panel&gt;</span>
+    <span class="nt">&lt;Panel.Header&gt;</span>
+        <span class="nt">&lt;Panel.Head</span>
+        <span class="na">description=</span><span class="s">&quot;New Fundamental App&quot;</span>
+        <span class="na">title=</span><span class="s">&quot;Fiori 3.0 with React&quot;</span>
+        <span class="nt">/&gt;</span>
+        <span class="nt">&lt;Panel.Actions&gt;</span>
+        <span class="nt">&lt;Button</span>
+            <span class="err">compact</span>
+            <span class="na">glyph=</span><span class="s">&quot;add&quot;</span><span class="nt">&gt;</span>
+            Add Item
+    <span class="nt">&lt;/Button&gt;</span>
+        <span class="nt">&lt;/Panel.Actions&gt;</span>
+    <span class="nt">&lt;/Panel.Header&gt;</span>
+
+    <span class="nt">&lt;Panel.Body&gt;</span>
+        Open-source , New UI
+    <span class="nt">&lt;/Panel.Body&gt;</span>
+<span class="nt">&lt;/Panel&gt;</span>
+</code></pre></div>
+<p>After completing all code changes , we can start the application by typing <code>npm start</code> to the terminal. App will view like below screen.</p>
+<p><img alt="alt" src="../../images/fundamental-sap-fiori2.png" /></p>
+<p><a href="https://github.com/yunustuzun/sap-fundamental">See the sample code in Github</a></p>
+<p>You can review the components above and use them in your developments. For more information click on the components.</p>
+<p>In <a href="https://github.com/sap/fundamental-react">Github community</a> you can get more information and contribute to libraries.</p>
                 
               
               
@@ -362,7 +404,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../.." class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../custom-paginator/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -371,19 +413,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Home
+                Custom Paginator for Grid Table
               </div>
             </div>
           </a>
         
         
-          <a href="../fundamentals-sap-fiori/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../personel/my-favorite-tool/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Fundamentals for SAP Fiori Applications Intro
+                My Favorite Tools
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
