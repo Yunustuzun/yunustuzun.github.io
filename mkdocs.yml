@@ -1,9 +1,9 @@
-site_name: Yunus Tüzün - Computer Engineer
+site_name: Yunus Tüzün Notes
 theme:
   name: material
-  palette:
-    primary: teal
-    accent: blue
+  font:
+    text: Poppins
   features:
-    - navigation.tabs
-    - navigation.tabs.sticky
+    - navigation.sections
+extra_css:
+  - stylesheets/extra.css

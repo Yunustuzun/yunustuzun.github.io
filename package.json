@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "mkdocs build --clean",
+    "test": "mkdocs serve",
     "build": "mkdocs build -d mydocs --clean"
   },
   "repository": {
