@@ -2,7 +2,7 @@
   "name": "yunustuzun.github.io",
   "version": "1.0.0",
   "description": "",
-  "main": "blog/index.html",
+  "main": "notes/index.html",
   "directories": {
     "doc": "docs"
   },
