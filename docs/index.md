@@ -1,7 +1,7 @@
 ## My daily notes about software developments
 
 ### ⚡ Profile
-- ABAP, Fiori, SAP Hana technologies implemented in many projects and proficient in a variety of different platforms with an innate ability to learn and master other technologies. Passionate about technology and innovation. I enjoy all the digital things.
+- Sap ABAP, Fiori, SAP Hana technologies implemented in many projects and proficient in a variety of different platforms with an innate ability to learn and master other technologies. Passionate about technology and innovation. I enjoy all the digital things.
 - Experience working on more than 30 SAP projects including MM, SD, PP, FI, CO, QM, WM, PM, HR, DMS, PS, BPC, Retail, and MDG modules.
 - ABAP Skills (Abap Objects, Abap 7.50, Hana System, Workflows, Adobe Interactive Forms)
 - SAP Fiori UI Skills(SAPUI5, Launchpad, Gateway, Odata, jQuery, Configurations, Fiori Elements, Annotations)
