@@ -8,8 +8,7 @@
   },
   "scripts": {
     "test": "mkdocs serve",
-    "build": "mkdocs build -d notes --clean",
-    "deploy": "git add . && git commit -m 'no-message' && git push origin master"
+    "deploy": "mkdocs build -d notes --clean && git add . && git commit -m 'no-message' && git push origin master"
   },
   "repository": {
     "type": "git",
