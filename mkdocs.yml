@@ -1,8 +1,6 @@
 site_name: Yunus Tüzün Notes
 theme:
   name: material
-  font:
-    text: Source Sans Pro
   highlightjs: true
   hljs_languages:
     - xml
