@@ -9,7 +9,8 @@ theme:
     - javascript    
   features:
     - navigation.sections
-
+  icon:
+    logo: material/memory
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
