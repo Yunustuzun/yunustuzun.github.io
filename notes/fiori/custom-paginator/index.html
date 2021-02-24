@@ -221,9 +221,52 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Custom Paginator for Grid Table
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Custom Paginator for Grid Table
       </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    Logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    Next Step
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -334,6 +377,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic" class="md-nav__link">
+    Logic
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#next-step" class="md-nav__link">
+    Next Step
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -346,16 +418,91 @@
                 
                 
                 <h1 id="custom-paginator-for-grid-table">Custom Paginator for Grid Table<a class="headerlink" href="#custom-paginator-for-grid-table" title="Permanent link">&para;</a></h1>
-<p>In this blog post, I will mention how we add paginator to grid tables. Firstly, the paginator control was in older versions. After 1.38 version of UI5, we couldn’t add paginator in grid tables.</p>
-<p>When I started coding the pagination structure, It seems very easy. But after some parts of filtering, sorting, changing page count functionality, it became more and more complex. For Example; if you will use filtering you should regenerate paginator vs.</p>
-<p>After this workings, I plan to create a new custom control and use it in view in an easy way.</p>
-<p>You can view it in <a href="http://embed.plnkr.co/9Jlh6N/">Plunker</a>.
-<img alt="Custom Paginator" src="../images/custom-paginator-1.png" />
-<img alt="Custom Paginator" src="../images/custom-paginator-2.png" /></p>
-<p>First of all, I perform the rendering of the Paginator after each reporting process is finished. The point to be careful here is that we need to do the paginator again in all sorting and filtering operations.</p>
-<p>I created the template for adding the paginator structure with the below code block. I am creating a separate template for Mobile.</p>
-<p>Depending on the page count and item count, I fill the properties of my paginator object and init it. For mobile, I prefer to select control. If you want to examine the full code structure, you can access it from the <a href="https://github.com/Yunustuzun/Paginator-in-Table-UI5">link</a>.</p>
-<p>I didn’t do anything on the View layer to create the Paginator function. In the next blog post, I aim to explain how we can activate it with a simple parameter on the View layer of the application, not writing any code on the controller side via custom controls.</p>
+<h2 id="intro">Intro<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<p>In this blog post, I will mention how we add paginator to grid tables. The requirement was adding a paginator to the table using the 1.65 UI5 version. The paginator feature for the tables deprecated after the 1.38 version of UI5, so we couldn’t add paginator in grid tables. I decided to write my own paginator feature for the UI table.</p>
+<p>When I started coding the paginator logic, It didn’t seem very complex. But after some parts of filtering, sorting, changing page count functionality, it became more and more complex. Filtering, sorting operations require changing your paginator dynamically and page count, per item per page attributes became dependent on this functionality.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="For desktop devices" src="../images/custom-paginator-1.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>For desktop devices</em></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th align="center"><img alt="For mobile devices" src="../images/custom-paginator-2.png" /></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><em>For mobile devices</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="logic">Logic<a class="headerlink" href="#logic" title="Permanent link">&para;</a></h2>
+<p>I perform the rendering process of the paginator after the page rendering finished. The point to be careful here is that we need to do the render paginator again depend on all sorting and filtering operations.</p>
+<p><div class="highlight"><pre><span></span><code><span class="nx">_setTableSettings</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">.</span>
+<span class="p">.</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">addPaginator</span><span class="p">(</span><span class="s2">&quot;productTable&quot;</span><span class="p">,</span> <span class="nx">aTableData</span><span class="p">);</span>
+<span class="p">.</span>
+<span class="p">.</span>
+<span class="nx">oTable</span><span class="p">.</span><span class="nx">attachSort</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">.</span>
+<span class="p">.</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">addPaginator</span><span class="p">(</span><span class="s2">&quot;productTable&quot;</span><span class="p">,</span> <span class="nx">aTable</span><span class="p">);</span>
+<span class="p">.</span>
+<span class="p">.</span>
+<span class="nx">oTable</span><span class="p">.</span><span class="nx">attachFilter</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">)</span> <span class="p">{</span>
+<span class="p">.</span>
+   <span class="k">this</span><span class="p">.</span><span class="nx">addPaginator</span><span class="p">(</span><span class="s2">&quot;productTable&quot;</span><span class="p">,</span> <span class="nx">aTable</span><span class="p">);</span>
+<span class="p">.</span>
+<span class="p">.</span>
+</code></pre></div>
+Paginator UI should be rendered depending on which device work. Mobile and desktop versions use different controls. for mobile devices, select control preferred.</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">_devicePhone</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">oHBoxPagination</span><span class="p">.</span><span class="nx">setWidth</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+  <span class="nx">oHBox1</span><span class="p">.</span><span class="nx">setJustifyContent</span><span class="p">(</span><span class="s2">&quot;Center&quot;</span><span class="p">);</span>
+  <span class="nx">oHBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBoxPagination</span><span class="p">);</span>
+  <span class="nx">oHBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oLabel1</span><span class="p">);</span>
+  <span class="nx">oComboBoxCount</span><span class="p">.</span><span class="nx">setSelectedKey</span><span class="p">(</span><span class="s2">&quot;5&quot;</span><span class="p">);</span>
+  <span class="nx">oVBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBox1</span><span class="p">);</span>
+  <span class="nx">oContentHolder</span><span class="p">.</span><span class="nx">addContent</span><span class="p">(</span><span class="nx">oVBox1</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+  <span class="nx">oHBox3</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oLabel1</span><span class="p">);</span>
+  <span class="nx">oHBox4</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oComboBoxCount</span><span class="p">);</span>
+  <span class="nx">oHBox2</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBox3</span><span class="p">);</span>
+  <span class="nx">oHBox2</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBox4</span><span class="p">);</span>
+  <span class="nx">oHBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBoxPagination</span><span class="p">);</span>
+  <span class="nx">oHBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBox2</span><span class="p">);</span>
+  <span class="nx">oVBox1</span><span class="p">.</span><span class="nx">addItem</span><span class="p">(</span><span class="nx">oHBox1</span><span class="p">);</span>
+  <span class="nx">oContentHolder</span><span class="p">.</span><span class="nx">addContent</span><span class="p">(</span><span class="nx">oVBox1</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+The code block below is where the paginator algorithm starts. Depending on the page and item count, it fills the properties of the paginator object and inits it. Details of algorithm inside pagination object.</p>
+<div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">oPagination</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+    <span class="nx">size</span><span class="o">:</span> <span class="nx">size</span><span class="p">,</span>
+    <span class="nx">page</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+    <span class="nx">step</span><span class="o">:</span> <span class="mf">5</span><span class="p">,</span>
+    <span class="nx">table</span><span class="o">:</span> <span class="nx">oTablex</span><span class="p">,</span>
+    <span class="nx">countTable</span><span class="o">:</span> <span class="nx">countTable</span><span class="p">,</span>
+    <span class="nx">countPerPage</span><span class="o">:</span> <span class="nx">countPerPage</span><span class="p">,</span>
+    <span class="nx">tableData</span><span class="o">:</span> <span class="nx">tableData</span><span class="p">,</span>
+    <span class="nx">devicePhone</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_devicePhone</span><span class="p">,</span>
+    <span class="nx">deviceTablet</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">_deviceTablet</span>
+<span class="p">});</span>
+</code></pre></div>
+<h2 id="next-step">Next Step<a class="headerlink" href="#next-step" title="Permanent link">&para;</a></h2>
+<p>There aren’t any codes in the view layer to create the paginator function. I aim to explain in the next blog post that how we can activate it with simple parameters in custom controls on the view layer instead of writing it in the controller. It will simplify and abstract all processes for reuse.</p>
+<p>You can view the demo application and see all resources <a href="http://embed.plnkr.co/9Jlh6N/">here</a>.</p>
+<p>Forks, pull-requests are welcome on <a href="https://github.com/Yunustuzun/Paginator-in-Table-UI5">Github</a>.</p>
+<p>Enjoy!</p>
                 
               
               
