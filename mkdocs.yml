@@ -1,16 +1,19 @@
 site_name: Yunus Tüzün Notes
 theme:
+  favicon: images/favicon.png 
   name: material
+  font:
+    text: Source Sans Pro
   highlightjs: true
   hljs_languages:
     - xml
     - yaml
-    - rust    
-    - javascript    
+    - rust
+    - javascript
   features:
     - navigation.sections
   icon:
-    logo: material/memory
+    logo: material/bookmark
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
