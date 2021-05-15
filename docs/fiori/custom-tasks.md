@@ -26,7 +26,7 @@ task:
 ````
 
 ## Prepare task file
-It is necessary to export a function in the following structure to the file to callback a continuous operation. The workspace object allows us to perform the desired operations on the files.
+It is necessary to export a function in the following structure in the file to callback a continuous operation. The workspace object allows us to perform the desired operations on the files.
 
 ````javascript
 module.exports = async function ({ workspace, dependencies, taskUtil, options }) {
