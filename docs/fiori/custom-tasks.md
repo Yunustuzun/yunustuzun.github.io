@@ -7,7 +7,8 @@ In UI5 tooling, a custom task can be used to include various operations during t
 
 ## Prepare task configuration
 
-In the ui5.yaml file, we need to specify which task file to run and which runtime to consider.
+In the ui5.yaml file, we need to specify which task file to run and reference other tasks to which runtime to consider. In this example, our custom task will run before the standard task **replaceCopyright**. 
+
 
 ````yaml
 builder:
