@@ -1,4 +1,4 @@
-# Custom Paginator for Grid Table
+# Custom paginator for Grid Table
 
 ## Intro
 

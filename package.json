@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Yunustuzun/yunustuzun.github.io/issues"
   },
-  "homepage": "https://github.com/Yunustuzun/yunustuzun.github.io#readme"
+  "homepage": "https://github.com/Yunustuzun/yunustuzun.github.io#readme",
+  "dependencies": {
+    "mkdocs": "0.0.1"
+  }
 }
