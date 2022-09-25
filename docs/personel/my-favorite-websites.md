@@ -47,6 +47,8 @@
 - searchman.com App Data Solutions to accelerate Ecosystem success
 - videoscribe.co Make your own whiteboard video fast
 - placeit.net Smart Templates Make Design Easy
+
+## Gaming
 - Age of Empires
 - aoezone.net The international Age Of Empires community
 - ageofempires.fandom.com has 3,825 articles and 11,859 images! 
